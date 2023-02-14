@@ -5,11 +5,8 @@
 package inweb.spring.servidor_https_spring.controlador;
 
 import innui.modelos.configuraciones.ResourceBundles;
-import innui.modelos.configuraciones.Resources;
 import innui.modelos.errores.oks;
 import innui.modelos.internacionalizacion.tr;
-import java.io.File;
-import java.net.URL;
 import java.util.ResourceBundle;
 import org.springframework.ui.Model;
 
@@ -19,7 +16,7 @@ import org.springframework.ui.Model;
  */
 public class pagina_inicio_factoria {
     public static String k_in_ruta = "in/inweb/spring/servidor_https_spring/controlador/in";
-    public static String k_servidor_activo_html = "servidor_activo.html";   
+    public static String k_servidor_activo_html = "servidor_https_spring/index.html";   
     public static String k_titulo_txt = "titulo_txt";
     public static String k_ok_txt = "ok_txt";
     public static pagina_inicio_factoria pagina_inicio = new pagina_inicio_factoria();

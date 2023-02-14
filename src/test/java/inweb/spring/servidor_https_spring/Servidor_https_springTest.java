@@ -5,9 +5,10 @@
 package inweb.spring.servidor_https_spring;
 
 import innui.modelos.errores.oks;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.Ignore;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
 /**
  *
