@@ -7,7 +7,7 @@ import java.net.ServerSocket;
  *
  * @author emilio
  */
-public class utilidades_sockets {
+public class Utilidades_sockets {
 
     public static int encontrar_puerto_libre(int puerto_de_inicio, oks ok, Object... extra_array) throws Exception {
         int i = puerto_de_inicio;

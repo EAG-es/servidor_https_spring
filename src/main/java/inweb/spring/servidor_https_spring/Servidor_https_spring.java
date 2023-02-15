@@ -1,6 +1,6 @@
 package inweb.spring.servidor_https_spring;
 
-import innui.modelos.comunicaciones.sockets.utilidades_sockets;
+import innui.modelos.comunicaciones.sockets.Utilidades_sockets;
 import innui.modelos.configuraciones.ResourceBundles;
 import innui.modelos.configuraciones.Resources;
 import innui.modelos.configuraciones.iniciales;
@@ -69,7 +69,7 @@ public class Servidor_https_spring extends iniciales {
                     File file;
                     String reemplazo_texto = "";
                     boolean es_hacer_reemplazo = false;
-                    int puerto_libre = utilidades_sockets.encontrar_puerto_libre(443, ok);
+                    int puerto_libre = Utilidades_sockets.encontrar_puerto_libre(443, ok);
                     springApplication = new SpringApplication((Class) extra_array[0]);
                     // System.getProperties().put( "server.port", puerto_libre );
                     Map<String, Object> mapa = new HashMap();
