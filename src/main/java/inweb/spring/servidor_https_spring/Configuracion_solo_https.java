@@ -10,7 +10,7 @@ import org.springframework.security.web.SecurityFilterChain;
  * @author emilio
  */
 @Configuration
-public class configuracion_solo_https {
+public class Configuracion_solo_https {
 
   @Bean
   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
