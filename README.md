@@ -4,9 +4,12 @@ Servidor HTTPS con la Java y el marco de desarrollo Spring
 Depende de:
 - Modelos: https://github.com/EAG-es/modelos
 
-El servidor HTTPS necesita que se cree un almacen de claves. Tiene uno incorporado (re/almacen_claves.p12) , que debería ser reemplazado empleando el comando:
+El servidor HTTPS necesita que se cree un almacen de claves. Tiene uno incorporado (re/almacen_claves.p12), que debería ser reemplazado. Puede hacerse empleando el comando:
 
-keytool -genkeypair -alias <etiqueta identificadora> -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore <nombre del archivo.p12> -validiy <días de validez> -storepass <contraseña del almacen a generar>
+keytool -genkeypair -alias <etiqueta identificadora> -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore <nombre del archivo.p12> -validity <días de validez> -storepass <contraseña del almacen a generar>
+
+1) El uso del almacen de claves en el protocolo HTTPS precisa que el identificador CN (first and last name) coincida con el DNS (el hostname) de la petición.
+2) Si el certificado guardado en el almacen de claves no tiene autoridad certificadora (CA) se produce un mensaje de error en el navegador Web. Y hay que indicar que se desea continuar a pesar de ello.
 
 Los datos de configuración de TSL están en el archivo: re/inweb.spring.servidor_https_spring.properties:
 - server.connection-timeout=30s               
@@ -26,7 +29,7 @@ Donde:
 - jar_ruta: Se cambia en tiempo de ejecución por la ruta donde está el jar con la clase que hereda de: Servidor_https_spring.class
 
 También están los comandos para lanzar un navegador web cuando se termina de arrancar el Servidor HTTPS:
-- # Otras opciones: firefox, google-chrome, opera, brave-browse
+- #Otras opciones: firefox, google-chrome, opera, brave-browse
 - servidor_https_spring.comando_para_ejecutar_navegador=google-chrome
 - servidor_https_spring.comando_url_que_ejecutar_navegador=https://localhost:puerto_num:/
 
