@@ -185,7 +185,9 @@ public class Servidor_https_spring extends iniciales {
                     lanzar_aplicacion_javafx_configurada(mapa, ok);
                     break;
                 }
-                terminar(ok);
+                oks ok_fin = new oks();
+                terminar(ok_fin);
+                ok.setTxt(ok.getTxt(), ok_fin.getTxt());
             }
         } catch (Exception e) {
             ok.setTxt(e);
