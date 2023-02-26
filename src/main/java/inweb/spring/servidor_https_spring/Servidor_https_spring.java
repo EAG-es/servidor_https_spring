@@ -182,7 +182,7 @@ public class Servidor_https_spring extends iniciales {
                         texto = texto.replace(k_puerto_num, String.valueOf(puerto_libre));
                     }
                     mapa.put(k_comando_url, texto);
-                    lanzar_aplicacion_javafx_configurada(mapa, ok);
+                    lanzar_navegador_web_configurado(mapa, ok);
                     break;
                 }
                 oks ok_fin = new oks();
@@ -213,7 +213,7 @@ public class Servidor_https_spring extends iniciales {
         return ok.es;
     }
 
-    public boolean lanzar_aplicacion_javafx_configurada(Map<String, Object> mapa
+    public boolean lanzar_navegador_web_configurado(Map<String, Object> mapa
             , oks ok, Object... extra_array) throws Exception {
         String comando = (String) mapa.get(k_comando_navegador);
         String url = (String) mapa.get(k_comando_url);
