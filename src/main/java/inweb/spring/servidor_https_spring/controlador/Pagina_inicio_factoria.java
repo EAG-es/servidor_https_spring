@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package inweb.spring.servidor_https_spring.controlador;
 
 import innui.modelos.configuraciones.ResourceBundles;
@@ -18,6 +14,7 @@ public class Pagina_inicio_factoria {
     public static String k_in_ruta = "in/inweb/spring/servidor_https_spring/controlador/in";
     public static String k_servidor_activo_html = "servidor_https_spring/index.html";   
     public static String k_titulo_tex = "titulo_tex";
+    public static String k_mensaje_tex = "mensaje_tex";
     public static String k_ok_tex = "ok_tex";
     public static Pagina_inicio_factoria pagina_inicio = new Pagina_inicio_factoria();
 
@@ -38,6 +35,7 @@ public class Pagina_inicio_factoria {
             in = ResourceBundles.getBundle(k_in_ruta);
             String texto = tr.in(in, "Servidor Web Spring: ¡Hola Mundo! ");
             model.addAttribute(k_titulo_tex, texto);
+            model.addAttribute(k_mensaje_tex, tr.in(in, "nota_importante"));
         } catch (Exception e) {
             in = ResourceBundles.getBundle(k_in_ruta);
             ok.setTxt(tr.in(in, "Excepción inesperada "), e);

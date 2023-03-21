@@ -188,7 +188,7 @@ public class Servidor_https_spring extends iniciales {
                 oks ok_fin = new oks();
                 terminar(ok_fin);
                 if (ok_fin.es == false) {
-                    ok.setTxt(ok_fin.getTxt());
+                    ok.setTxt(ok.getTxt(), ok_fin.getTxt());
                 }
             }
         } catch (Exception e) {
