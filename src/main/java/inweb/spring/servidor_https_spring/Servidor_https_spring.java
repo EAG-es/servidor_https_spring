@@ -174,15 +174,17 @@ public class Servidor_https_spring extends iniciales {
                     texto = this.properties.getProperty(k_comando_navegador);
                     ok.no_nul(texto, tr.in(in, "Propiedad no encontrada ") + k_comando_navegador);
                     if (ok.es == false) { break; }
-                    mapa.put(k_comando_navegador, texto);
-                    texto = this.properties.getProperty(k_comando_url);
-                    ok.no_nul(texto, tr.in(in, "Propiedad no encontrada ") + k_comando_url);
-                    if (ok.es == false) { break; }
-                    if (texto.contains(k_puerto_num)) {
-                        texto = texto.replace(k_puerto_num, String.valueOf(puerto_libre));
+                    if (texto.isBlank() == false) {
+                        mapa.put(k_comando_navegador, texto);
+                        texto = this.properties.getProperty(k_comando_url);
+                        ok.no_nul(texto, tr.in(in, "Propiedad no encontrada ") + k_comando_url);
+                        if (ok.es == false) { break; }
+                        if (texto.contains(k_puerto_num)) {
+                            texto = texto.replace(k_puerto_num, String.valueOf(puerto_libre));
+                        }
+                        mapa.put(k_comando_url, texto);
+                        lanzar_navegador_web_configurado(mapa, ok);
                     }
-                    mapa.put(k_comando_url, texto);
-                    lanzar_navegador_web_configurado(mapa, ok);
                     break;
                 }
                 oks ok_fin = new oks();
